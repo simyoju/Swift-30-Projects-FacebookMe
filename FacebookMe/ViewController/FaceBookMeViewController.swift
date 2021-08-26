@@ -11,7 +11,7 @@ class FaceBookMeViewController: UIViewController {
     /*
      controller는 데이터를 받아야함
      */
-    var model = [String]()
+//    var model = [String]()
     var sections:[String] = [" "," ","FAVORITES"," "," "]
     var cellTitles:[[String]] = [
         ["Simyo"],
@@ -20,6 +20,13 @@ class FaceBookMeViewController: UIViewController {
         ["Settings","Privacy Shortcuts", "Help and Support"],
         ["Log Out"]
     ]
+    var images = [
+        ["profileImg"],
+        ["fb_friends", "fb_events", "fb_groups", "fb_education", "fb_town_hall", "fb_games",  ""],
+        ["fb_placeholder", "fb_placeholder", "fb_placeholder"],
+        ["fb_settings", "fb_privacy_shortcuts", "fb_help_and_support"],
+        ["fb_placeholder"]
+    ]
     let tableView = UITableView()
     
     
@@ -27,15 +34,19 @@ class FaceBookMeViewController: UIViewController {
         super.viewDidLoad()
         // autoLayout setting
         layout()
-        attribute()
         
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.register(ProfileCell.self, forCellReuseIdentifier: "ProfileCell")
         tableView.register(ListCell.self, forCellReuseIdentifier: "ListCell")
+        
+        navigationController?.navigationBar.barTintColor = UIColor(named: "facebookColor")
+        self.navigationItem.title = "FaceBook"
+        
     }
 
-    func layout() {
+    private func layout() {
         view.addSubview(tableView)
         //tableView.frame = view.bounds
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,9 +56,6 @@ class FaceBookMeViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
     
-    func attribute(){
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ListCell")
-    }
 }
 
 extension FaceBookMeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -64,15 +72,36 @@ extension FaceBookMeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! ListCell
-        cell.title.text = "test"
-        cell.subtitle.text = "test2"
-        return cell
+        
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileCell
+            cell.title.text = "심효주"
+            cell.subtitle.text = "스토리보드 없이 개발중"
+            cell.leftImage.image = UIImage(named: "profileImg")
+            return cell
+
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! ListCell
+//            if indexPath.row == cellTitles[indexPath.section].count-1 {
+//                cell.title.tintColor = .blue
+//            }
+            if indexPath.row == 6 { cell.title.tintColor = UIColor.blue}
+            cell.title.text = cellTitles[indexPath.section][indexPath.row]
+            cell.leftImage.image = UIImage(named: images[indexPath.section][indexPath.row])
+            return cell
+        }
+        
+        
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(80)
+        if indexPath.section == 0 {
+            return CGFloat(80)
+        } else {
+            return CGFloat(40)
+        }
     }
     
 }

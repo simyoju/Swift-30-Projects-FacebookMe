@@ -12,19 +12,14 @@ class ListCell: UITableViewCell {
     
     let leftImage = UIImageView()
     let title = UILabel()
-    let subtitle = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-        //cell의 style 종류는 뭐뭐 있을까?
     
-        leftImage.backgroundColor = .purple
-        title.backgroundColor = .black
-        subtitle.backgroundColor = .blue
+        //leftImage.backgroundColor = .purple
         
         addSubview(leftImage)
         addSubview(title)
-        addSubview(subtitle)
         layout()
     }
     
@@ -32,11 +27,9 @@ class ListCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func layout(){
+    private func layout(){
         leftImage.translatesAutoresizingMaskIntoConstraints = false
         title.translatesAutoresizingMaskIntoConstraints = false
-        subtitle.translatesAutoresizingMaskIntoConstraints = false
-        
         
         //title.backgroundColor = .yellow
         
@@ -44,15 +37,11 @@ class ListCell: UITableViewCell {
             leftImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             leftImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             
-            leftImage.heightAnchor.constraint(equalToConstant: 60),
-            leftImage.widthAnchor.constraint(equalToConstant: 60),
+            leftImage.heightAnchor.constraint(equalToConstant: 20),
+            leftImage.widthAnchor.constraint(equalToConstant: 20),
             
-            title.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            title.leadingAnchor.constraint(equalTo: self.leftImage.trailingAnchor, constant: 10),
-            
-            subtitle.topAnchor.constraint(equalTo: self.title.bottomAnchor, constant: 5),
-            subtitle.leadingAnchor.constraint(equalTo: self.leftImage.trailingAnchor, constant: 10)
-            
+            title.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            title.leadingAnchor.constraint(equalTo: self.leftImage.trailingAnchor, constant: 20),
             
         ])
     }
