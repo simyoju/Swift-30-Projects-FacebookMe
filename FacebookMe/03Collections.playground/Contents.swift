@@ -51,3 +51,14 @@ let part = omg[0...2]
 print(omg)
 omg[0...2] = ["승희", "효정"]
 print(omg)
+
+var set1: Set<String> = Set<String>()
+var set2: Set<String> = []
+var set3: Set<String> = ["최효정", "김미현", "유시아", "현승희", "배유빈", "김지호", "최아린"]
+
+for name in set3 {
+    print(name)
+}
+
+let res = set3.insert("현승희")
+print(res)

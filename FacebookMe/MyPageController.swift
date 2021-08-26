@@ -16,7 +16,9 @@ struct configureInfo {
 // 모델링 많이 해보기!
 // 1. 노가다 ㅜㅜㅜㅜ 2. 반복되는 작업 -> 모델링 3. 이렇게 프로젝트를 정리하면 MVC 패턴으로 됨
 
-class MyPageController: UITableViewController {
+class MyPageController: UIViewController {
+    
+    var tableView = UITableView(frame: .zero, style: .grouped)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,6 +31,9 @@ class MyPageController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "FaceBook"
+        
+        tableView.backgroundColor = .green
     }
 
     // MARK: - Table view data source
@@ -162,51 +167,9 @@ class MyPageController: UITableViewController {
             return cell!
         }
     }
+
+}
+
+extension MyPageController: UITableViewDelegate, UITableViewDataSource {
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
