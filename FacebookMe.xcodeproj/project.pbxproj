@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF0DAB6D26D75B8B006AD141 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0DAB6C26D75B8B006AD141 /* ProfileCell.swift */; };
+		DF0DAC1626D89342006AD141 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0DAC1526D89342006AD141 /* Data.swift */; };
 		DF3725A026CCD70600A376E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF37259F26CCD70600A376E1 /* AppDelegate.swift */; };
 		DF3725A226CCD70600A376E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3725A126CCD70600A376E1 /* SceneDelegate.swift */; };
 		DF3725AA26CCD70600A376E1 /* FacebookMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF3725A826CCD70600A376E1 /* FacebookMe.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		DF0DAB6C26D75B8B006AD141 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		DF0DAC1526D89342006AD141 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		DF37259C26CCD70600A376E1 /* FacebookMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF37259F26CCD70600A376E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF3725A126CCD70600A376E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				DF4887F426D4A2D3005B9519 /* UserInfo.swift */,
 				DF4887F626D4B0FF005B9519 /* MenuInfo.swift */,
+				DF0DAC1526D89342006AD141 /* Data.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				DF48879926CDFD05005B9519 /* ListCell.swift in Sources */,
 				DF0DAB6D26D75B8B006AD141 /* ProfileCell.swift in Sources */,
 				DF3725AA26CCD70600A376E1 /* FacebookMe.xcdatamodeld in Sources */,
+				DF0DAC1626D89342006AD141 /* Data.swift in Sources */,
 				DF4887F526D4A2D3005B9519 /* UserInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

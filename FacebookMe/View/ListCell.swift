@@ -42,6 +42,7 @@ class ListCell: UITableViewCell {
             
             title.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             title.leadingAnchor.constraint(equalTo: self.leftImage.trailingAnchor, constant: 20),
+            title.widthAnchor.constraint(equalToConstant: self.frame.width-20)
             
         ])
     }
