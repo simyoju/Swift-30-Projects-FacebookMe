@@ -1,6 +1,6 @@
 # Swift-30-Projects-FacebookMe
 
-![do this ->](https://github.com/soapyigu/Swift-30-Projects/tree/master/Project%2003%20-%20FacebookMe)
+![do this](https://github.com/soapyigu/Swift-30-Projects/tree/master/Project%2003%20-%20FacebookMe)
 
 ## has two branches
 1. main - develop with storyboard
